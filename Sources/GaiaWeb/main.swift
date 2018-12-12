@@ -22,8 +22,7 @@ router.get("/") { _, response, next in
 router.get("/:page") {
     request, response, next in
     
-    if let page = request.parameters["page"],
-        page != "404" {
+    if let page = request.parameters["page"] {
         if page == "notfound" {
             next()
         }
