@@ -1,0 +1,10 @@
+#! /bin/bash
+
+if [ -z $1 ]; then
+	PORT=80
+else
+	PORT=$1
+fi
+
+docker run -it --rm -p $PORT:80 -v $PWD/public:/var/www/gaia/public -v $PWD/Views:/var/www/gaia/Views gaiaweb
+
